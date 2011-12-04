@@ -1,0 +1,11 @@
+application: drop2drink
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /hydrants/[0-9]+
+  script: hydrant.py
