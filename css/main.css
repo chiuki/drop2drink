@@ -17,3 +17,14 @@ label {
 .left {
    float: left;
 }
+
+.photo {
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.droplette {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

@@ -16,16 +16,16 @@
     </script>
   </head>
   <body>
-    <h1>Hydrant #{{Number}}</h1>
+    <h1>#{{Number}}</h1>
 	<div class="row">
 	  {% if Photo %}
-        <img class="left" src="{{Photo}}" />
+        <img class="left photo" src="{{Photo}}" />
 	  {% endif %}
-      <ul class="left">
-        <li><label>Sector</label> {{Sector}}</li>
-        <li><label>Corner</label> {{Corner}}</li>
-        <li><label>Address</label> {{Address}}</li>
-      </ul>
+      <div class="left">
+        {{Sector}}<br/>
+        {{Intersection}}<br/>
+        {{Corner}} Corner<br/>
+      </div>
 	</div>
 	{% if Notes %}
 	  <h2>Did you know?</h2>
@@ -34,6 +34,9 @@
 	<p>
 	  <a href="http://www.drop2drink.org">Home</a>
 	</p>
+	<a href="http://www.drop2drink.org">
+	  <img class="droplette" src="/images/droplette.png" />
+	</a>
   </body>
 </html>
 
