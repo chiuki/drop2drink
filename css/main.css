@@ -9,3 +9,11 @@ label {
   width: 5em;
   display: inline-block;
 }
+
+.row {
+  clear: both;
+  overflow: hidden;
+}
+.left {
+   float: left;
+}

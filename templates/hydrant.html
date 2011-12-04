@@ -17,11 +17,16 @@
   </head>
   <body>
     <h1>Hydrant #{{Number}}</h1>
-    <ul>
-      <li><label>Sector</label> {{Sector}}</li>
-      <li><label>Corner</label> {{Corner}}</li>
-      <li><label>Address</label> {{Address}}</li>
-    </ul>
+	<div class="row">
+	  {% if Photo %}
+        <img class="left" src="{{Photo}}" />
+	  {% endif %}
+      <ul class="left">
+        <li><label>Sector</label> {{Sector}}</li>
+        <li><label>Corner</label> {{Corner}}</li>
+        <li><label>Address</label> {{Address}}</li>
+      </ul>
+	</div>
 	{% if Notes %}
 	  <h2>Did you know?</h2>
 	  {{Notes}}
