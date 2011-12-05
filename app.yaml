@@ -10,5 +10,5 @@ handlers:
 - url: /images
   static_dir: images
 
-- url: /hydrants/[0-9]+
+- url: /(hydrants|cisterns)/[0-9]+
   script: hydrant.py

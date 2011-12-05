@@ -9,19 +9,25 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 
 class HydrantPage(webapp.RequestHandler):
   def get(self):
-    number = int(self.request.path.split('/')[2])  # e.g. /hydrants/27
-    data = self.fetch_data(number)
+    parts = self.request.path.split('/')
+    type = parts[1]
+    number = int(parts[2])  # e.g. /hydrants/27
+    data = self.fetch_data(type, number)
 
-    path = os.path.join(os.path.dirname(__file__), 'templates/hydrant.html')
+    path = os.path.join(os.path.dirname(__file__), 'templates/' + type + '.html')
     if path is None:
       self.response.set_status(404)
       return
 
     self.response.out.write(template.render(path, data))
 
-  def fetch_data(self, number):
+  def fetch_data(self, type, number):
+    fusion_tables = {
+      'hydrants' : 2331654,
+      'cisterns' : 2334232
+    }
     url = 'https://www.google.com/fusiontables/api/query'
-    sql = 'SELECT * FROM 2331654 WHERE Number = %d' % number
+    sql = 'SELECT * FROM %s WHERE Number = %d' % (fusion_tables[type], number)
     form_fields = {
       'sql': sql
     }
@@ -50,7 +56,7 @@ class HydrantPage(webapp.RequestHandler):
     return data
 
 handlers = [
-  ('/hydrants/[0-9]+', HydrantPage)
+  ('/.*/[0-9]+', HydrantPage)
 ]
 
 application = webapp.WSGIApplication(handlers, debug=False)

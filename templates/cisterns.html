@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>San Francisco Emergency Drinking Hydrant #{{Number}}</title>
+    <title>San Francisco Cistern #{{Number}}</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
     <script type="text/javascript">
@@ -22,15 +22,11 @@
         <img class="left photo" src="{{Photo}}" />
 	  {% endif %}
       <div class="left">
-        {{Sector}}<br/>
+      	{{District}}<br/>
         {{Intersection}}<br/>
-        {{Corner}} Corner<br/>
+        {{Capacity}} gallons
       </div>
 	</div>
-	{% if Notes %}
-	  <h2>Did you know?</h2>
-	  {{Notes}}
-	{% endif %}
 	<p>
 	  <a href="http://www.drop2drink.org">Home</a>
 	</p>

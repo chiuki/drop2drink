@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>San Francisco Emergency Drinking Hydrant #{{Number}}</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-27478704-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>#{{Number}}</h1>
+	<div class="row">
+	  {% if Photo %}
+        <img class="left photo" src="{{Photo}}" />
+	  {% endif %}
+      <div class="left">
+      	{{Sector}}<br/>
+        {{Intersection}}<br/>
+        {{Corner}} Corner
+      </div>
+	</div>
+	{% if Notes %}
+	  <h2>Did you know?</h2>
+	  {{Notes}}
+	{% endif %}
+	<p>
+	  <a href="http://www.drop2drink.org">Home</a>
+	</p>
+	<a href="http://www.drop2drink.org">
+	  <img class="droplette" src="/images/droplette.png" />
+	</a>
+  </body>
+</html>
+
